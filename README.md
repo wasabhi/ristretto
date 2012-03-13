@@ -31,7 +31,8 @@ License
 =======
 
 Ristretto - Project Management and Time-tracking
-Copyright (C) 2010-2012 Kale Worsley <kale@egressive.com>, Josh Campbell <josh@egressive.com>, Malc Locke <malc@egressive.com>
+
+Copyright (C) 2010-2012 Kale Worsley <kale@egressive.com>, Josh Campbell <josh@egressive.com>, Malc Locke <malc@egressive.com>, Patrick Davey <patrick@egressive.com>
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as
