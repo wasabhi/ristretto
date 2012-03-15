@@ -35,25 +35,10 @@
 
     <% end %>
 
-    <% if @customer.xero_customer.first_name.present? %>
-	    <strong>Contact:</strong>
-	    <% if @customer.xero_customer.email_address.present? %>
-        <%= mail_to @customer.xero_customer.email_address, "#{@customer.xero_customer.first_name} #{@customer.xero_customer.last_name}" %>
-      <% else %>
-        <%= "#{@customer.xero_customer.first_name} #{@customer.xero_customer.last_name}" %>
-      <% end %>
-    <% end %>
+    <%= c.item :contact, c.contact if @customer.xero_customer.first_name.present?%>
+    
+    <%= c.item :phones, c.phones if @customer.xero_customer.phones.map(&:number).reject {|n| n.blank?}.size > 0 %>
 
-    <% if @customer.xero_customer.phones.map(&:number).reject {|n| n.blank?}.size > 0 %>
-      <strong>Phones:</strong>
-      <ul>
-      <% @customer.xero_customer.phones.each do |phone| %>
-      <% if phone.number.present? %>
-        <li><strong><%= phone.type %>:</strong> <%= "#{phone.country_code} #{phone.area_code} #{phone.number}"%></li>
-      <% end %>
-      <% end %>
-      </ul>
-    <% end %>
   <% end %>
 
   <%- if @customer.projects.current.size != 0 -%>
